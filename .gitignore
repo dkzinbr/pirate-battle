@@ -19,3 +19,4 @@ dist/
 test-results/
 playwright/.cache/
 .vercel
+.vite/
