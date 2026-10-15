@@ -1,0 +1,1550 @@
+{
+  "date": "2026-10-15T01:17:13.932Z",
+  "environment": {
+    "cpu": "AMD Ryzen 5 9600X 6-Core Processor (12 threads)",
+    "ramGB": 31,
+    "os": "Windows_NT 10.0.26200",
+    "browser": "Chrome 155.0.8059.79",
+    "headless": false,
+    "viewport": {
+      "width": 1600,
+      "height": 900
+    },
+    "devicePixelRatio": 1,
+    "gpuRenderer": "ANGLE (AMD, AMD Radeon RX 9060 XT (0x00007590) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "config": {
+    "durationSec": 180,
+    "spawnIntervalSec": 2,
+    "seed": 2026
+  },
+  "match": {
+    "frames": {
+      "frames": 17038,
+      "avgFps": 94.24819391740145,
+      "avgFrameMs": 10.610282897053645,
+      "p50FrameMs": 10.60000000000582,
+      "p95FrameMs": 11.10000000000582,
+      "p99FrameMs": 11.599999999991269,
+      "maxFrameMs": 12,
+      "framesOver16_7ms": 0,
+      "framesOver33ms": 0
+    },
+    "entities": {
+      "enemies": {
+        "avg": 7.072625698324022,
+        "max": 10
+      },
+      "projectiles": {
+        "avg": 3.022346368715084,
+        "max": 8
+      },
+      "particles": {
+        "avg": 103.01117318435755,
+        "max": 170
+      },
+      "displayObjects": {
+        "avg": 523.7039106145252,
+        "max": 558
+      },
+      "finalScore": 39
+    },
+    "mainThread": {
+      "scriptMsPerSecond": 18.37433683524807,
+      "taskMsPerSecond": 32.04987330171857,
+      "layoutCount": 456,
+      "recalcStyleCount": 2962
+    },
+    "autoResumes": 0,
+    "wallSeconds": 181.139,
+    "gameSeconds": 180,
+    "timeline": [
+      {
+        "t": 1.0416666666666654,
+        "enemies": 0,
+        "projectiles": 5,
+        "particles": 26,
+        "displayObjects": 320,
+        "score": 0
+      },
+      {
+        "t": 2.0583333333333287,
+        "enemies": 1,
+        "projectiles": 2,
+        "particles": 45,
+        "displayObjects": 364,
+        "score": 0
+      },
+      {
+        "t": 3.0749999999999917,
+        "enemies": 1,
+        "projectiles": 1,
+        "particles": 49,
+        "displayObjects": 376,
+        "score": 0
+      },
+      {
+        "t": 4.083333333333326,
+        "enemies": 2,
+        "projectiles": 1,
+        "particles": 54,
+        "displayObjects": 383,
+        "score": 0
+      },
+      {
+        "t": 5.100000000000043,
+        "enemies": 2,
+        "projectiles": 6,
+        "particles": 76,
+        "displayObjects": 393,
+        "score": 0
+      },
+      {
+        "t": 6.108333333333427,
+        "enemies": 2,
+        "projectiles": 4,
+        "particles": 105,
+        "displayObjects": 417,
+        "score": 0
+      },
+      {
+        "t": 7.11666666666681,
+        "enemies": 2,
+        "projectiles": 4,
+        "particles": 64,
+        "displayObjects": 417,
+        "score": 0
+      },
+      {
+        "t": 8.12500000000018,
+        "enemies": 3,
+        "projectiles": 0,
+        "particles": 69,
+        "displayObjects": 423,
+        "score": 0
+      },
+      {
+        "t": 9.141666666666788,
+        "enemies": 3,
+        "projectiles": 2,
+        "particles": 71,
+        "displayObjects": 428,
+        "score": 0
+      },
+      {
+        "t": 10.150000000000064,
+        "enemies": 4,
+        "projectiles": 2,
+        "particles": 86,
+        "displayObjects": 434,
+        "score": 0
+      },
+      {
+        "t": 11.175000000000006,
+        "enemies": 4,
+        "projectiles": 2,
+        "particles": 77,
+        "displayObjects": 441,
+        "score": 0
+      },
+      {
+        "t": 12.17499999999995,
+        "enemies": 4,
+        "projectiles": 2,
+        "particles": 117,
+        "displayObjects": 445,
+        "score": 0
+      },
+      {
+        "t": 13.174999999999892,
+        "enemies": 3,
+        "projectiles": 0,
+        "particles": 104,
+        "displayObjects": 440,
+        "score": 1
+      },
+      {
+        "t": 14.199999999999834,
+        "enemies": 4,
+        "projectiles": 1,
+        "particles": 63,
+        "displayObjects": 446,
+        "score": 1
+      },
+      {
+        "t": 15.216666666666443,
+        "enemies": 4,
+        "projectiles": 4,
+        "particles": 86,
+        "displayObjects": 446,
+        "score": 1
+      },
+      {
+        "t": 16.22499999999972,
+        "enemies": 5,
+        "projectiles": 3,
+        "particles": 108,
+        "displayObjects": 456,
+        "score": 1
+      },
+      {
+        "t": 17.24166666666633,
+        "enemies": 5,
+        "projectiles": 2,
+        "particles": 88,
+        "displayObjects": 462,
+        "score": 1
+      },
+      {
+        "t": 18.25833333333294,
+        "enemies": 6,
+        "projectiles": 2,
+        "particles": 118,
+        "displayObjects": 475,
+        "score": 1
+      },
+      {
+        "t": 19.266666666666215,
+        "enemies": 4,
+        "projectiles": 1,
+        "particles": 120,
+        "displayObjects": 487,
+        "score": 3
+      },
+      {
+        "t": 20.27499999999949,
+        "enemies": 5,
+        "projectiles": 4,
+        "particles": 85,
+        "displayObjects": 493,
+        "score": 3
+      },
+      {
+        "t": 21.2916666666661,
+        "enemies": 4,
+        "projectiles": 0,
+        "particles": 105,
+        "displayObjects": 487,
+        "score": 3
+      },
+      {
+        "t": 22.30833333333271,
+        "enemies": 4,
+        "projectiles": 0,
+        "particles": 117,
+        "displayObjects": 487,
+        "score": 3
+      },
+      {
+        "t": 23.316666666665984,
+        "enemies": 3,
+        "projectiles": 2,
+        "particles": 95,
+        "displayObjects": 493,
+        "score": 3
+      },
+      {
+        "t": 24.316666666665927,
+        "enemies": 3,
+        "projectiles": 0,
+        "particles": 92,
+        "displayObjects": 493,
+        "score": 3
+      },
+      {
+        "t": 25.333333333332536,
+        "enemies": 3,
+        "projectiles": 3,
+        "particles": 82,
+        "displayObjects": 493,
+        "score": 3
+      },
+      {
+        "t": 26.349999999999145,
+        "enemies": 4,
+        "projectiles": 1,
+        "particles": 57,
+        "displayObjects": 499,
+        "score": 3
+      },
+      {
+        "t": 27.366666666665754,
+        "enemies": 4,
+        "projectiles": 5,
+        "particles": 64,
+        "displayObjects": 499,
+        "score": 3
+      },
+      {
+        "t": 28.37499999999903,
+        "enemies": 5,
+        "projectiles": 2,
+        "particles": 92,
+        "displayObjects": 505,
+        "score": 3
+      },
+      {
+        "t": 29.383333333332306,
+        "enemies": 5,
+        "projectiles": 4,
+        "particles": 70,
+        "displayObjects": 505,
+        "score": 3
+      },
+      {
+        "t": 30.391666666665582,
+        "enemies": 5,
+        "projectiles": 0,
+        "particles": 107,
+        "displayObjects": 505,
+        "score": 3
+      },
+      {
+        "t": 31.40833333333219,
+        "enemies": 5,
+        "projectiles": 4,
+        "particles": 75,
+        "displayObjects": 505,
+        "score": 3
+      },
+      {
+        "t": 32.40833333333214,
+        "enemies": 6,
+        "projectiles": 4,
+        "particles": 74,
+        "displayObjects": 511,
+        "score": 3
+      },
+      {
+        "t": 33.416666666665414,
+        "enemies": 6,
+        "projectiles": 1,
+        "particles": 98,
+        "displayObjects": 512,
+        "score": 3
+      },
+      {
+        "t": 34.41666666666536,
+        "enemies": 7,
+        "projectiles": 3,
+        "particles": 91,
+        "displayObjects": 518,
+        "score": 3
+      },
+      {
+        "t": 35.433333333331966,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 87,
+        "displayObjects": 518,
+        "score": 3
+      },
+      {
+        "t": 36.449999999998575,
+        "enemies": 7,
+        "projectiles": 7,
+        "particles": 104,
+        "displayObjects": 518,
+        "score": 3
+      },
+      {
+        "t": 37.46666666666518,
+        "enemies": 6,
+        "projectiles": 3,
+        "particles": 113,
+        "displayObjects": 512,
+        "score": 3
+      },
+      {
+        "t": 38.48333333333179,
+        "enemies": 7,
+        "projectiles": 3,
+        "particles": 93,
+        "displayObjects": 518,
+        "score": 3
+      },
+      {
+        "t": 39.49166666666507,
+        "enemies": 7,
+        "projectiles": 1,
+        "particles": 88,
+        "displayObjects": 518,
+        "score": 3
+      },
+      {
+        "t": 40.49166666666501,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 127,
+        "displayObjects": 518,
+        "score": 3
+      },
+      {
+        "t": 41.50833333333162,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 89,
+        "displayObjects": 524,
+        "score": 3
+      },
+      {
+        "t": 42.53333333333156,
+        "enemies": 7,
+        "projectiles": 0,
+        "particles": 111,
+        "displayObjects": 518,
+        "score": 4
+      },
+      {
+        "t": 43.533333333331505,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 105,
+        "displayObjects": 524,
+        "score": 4
+      },
+      {
+        "t": 44.549999999998114,
+        "enemies": 7,
+        "projectiles": 0,
+        "particles": 92,
+        "displayObjects": 518,
+        "score": 4
+      },
+      {
+        "t": 45.56666666666472,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 100,
+        "displayObjects": 518,
+        "score": 4
+      },
+      {
+        "t": 46.574999999998,
+        "enemies": 6,
+        "projectiles": 4,
+        "particles": 114,
+        "displayObjects": 512,
+        "score": 5
+      },
+      {
+        "t": 47.59166666666461,
+        "enemies": 7,
+        "projectiles": 3,
+        "particles": 97,
+        "displayObjects": 518,
+        "score": 5
+      },
+      {
+        "t": 48.60833333333122,
+        "enemies": 6,
+        "projectiles": 2,
+        "particles": 107,
+        "displayObjects": 512,
+        "score": 6
+      },
+      {
+        "t": 49.60833333333116,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 88,
+        "displayObjects": 518,
+        "score": 6
+      },
+      {
+        "t": 50.62499999999777,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 96,
+        "displayObjects": 518,
+        "score": 6
+      },
+      {
+        "t": 51.633333333331045,
+        "enemies": 8,
+        "projectiles": 0,
+        "particles": 86,
+        "displayObjects": 524,
+        "score": 6
+      },
+      {
+        "t": 52.649999999997654,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 116,
+        "displayObjects": 518,
+        "score": 6
+      },
+      {
+        "t": 53.65833333333093,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 79,
+        "displayObjects": 524,
+        "score": 6
+      },
+      {
+        "t": 54.65833333333087,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 104,
+        "displayObjects": 524,
+        "score": 6
+      },
+      {
+        "t": 55.683333333330815,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 125,
+        "displayObjects": 524,
+        "score": 7
+      },
+      {
+        "t": 56.69166666666409,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 102,
+        "displayObjects": 524,
+        "score": 7
+      },
+      {
+        "t": 57.7083333333307,
+        "enemies": 9,
+        "projectiles": 5,
+        "particles": 96,
+        "displayObjects": 530,
+        "score": 7
+      },
+      {
+        "t": 58.716666666663976,
+        "enemies": 8,
+        "projectiles": 6,
+        "particles": 110,
+        "displayObjects": 524,
+        "score": 7
+      },
+      {
+        "t": 59.733333333330584,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 140,
+        "displayObjects": 524,
+        "score": 7
+      },
+      {
+        "t": 60.724999999997195,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 95,
+        "displayObjects": 524,
+        "score": 7
+      },
+      {
+        "t": 61.74999999999714,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 101,
+        "displayObjects": 524,
+        "score": 8
+      },
+      {
+        "t": 62.75833333333041,
+        "enemies": 8,
+        "projectiles": 1,
+        "particles": 88,
+        "displayObjects": 524,
+        "score": 8
+      },
+      {
+        "t": 63.76666666666369,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 99,
+        "displayObjects": 530,
+        "score": 8
+      },
+      {
+        "t": 64.78333333333096,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 132,
+        "displayObjects": 530,
+        "score": 8
+      },
+      {
+        "t": 65.79999999999843,
+        "enemies": 10,
+        "projectiles": 4,
+        "particles": 133,
+        "displayObjects": 536,
+        "score": 8
+      },
+      {
+        "t": 66.80833333333257,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 131,
+        "displayObjects": 530,
+        "score": 9
+      },
+      {
+        "t": 67.80833333333337,
+        "enemies": 10,
+        "projectiles": 7,
+        "particles": 111,
+        "displayObjects": 536,
+        "score": 9
+      },
+      {
+        "t": 68.82500000000084,
+        "enemies": 9,
+        "projectiles": 2,
+        "particles": 160,
+        "displayObjects": 530,
+        "score": 10
+      },
+      {
+        "t": 69.83333333333498,
+        "enemies": 9,
+        "projectiles": 0,
+        "particles": 170,
+        "displayObjects": 540,
+        "score": 10
+      },
+      {
+        "t": 70.85000000000245,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 140,
+        "displayObjects": 538,
+        "score": 12
+      },
+      {
+        "t": 71.85833333333659,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 79,
+        "displayObjects": 544,
+        "score": 12
+      },
+      {
+        "t": 72.85833333333738,
+        "enemies": 8,
+        "projectiles": 1,
+        "particles": 92,
+        "displayObjects": 544,
+        "score": 12
+      },
+      {
+        "t": 73.87500000000486,
+        "enemies": 7,
+        "projectiles": 3,
+        "particles": 152,
+        "displayObjects": 538,
+        "score": 14
+      },
+      {
+        "t": 74.89166666667234,
+        "enemies": 6,
+        "projectiles": 3,
+        "particles": 135,
+        "displayObjects": 532,
+        "score": 14
+      },
+      {
+        "t": 75.90000000000647,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 92,
+        "displayObjects": 538,
+        "score": 14
+      },
+      {
+        "t": 76.90833333334061,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 109,
+        "displayObjects": 538,
+        "score": 14
+      },
+      {
+        "t": 77.91666666667474,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 130,
+        "displayObjects": 538,
+        "score": 14
+      },
+      {
+        "t": 78.92500000000888,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 115,
+        "displayObjects": 538,
+        "score": 14
+      },
+      {
+        "t": 79.94166666667635,
+        "enemies": 8,
+        "projectiles": 3,
+        "particles": 128,
+        "displayObjects": 544,
+        "score": 14
+      },
+      {
+        "t": 80.95833333334383,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 144,
+        "displayObjects": 538,
+        "score": 14
+      },
+      {
+        "t": 81.96666666667797,
+        "enemies": 7,
+        "projectiles": 1,
+        "particles": 117,
+        "displayObjects": 538,
+        "score": 15
+      },
+      {
+        "t": 82.9750000000121,
+        "enemies": 6,
+        "projectiles": 4,
+        "particles": 129,
+        "displayObjects": 532,
+        "score": 16
+      },
+      {
+        "t": 83.99166666667958,
+        "enemies": 6,
+        "projectiles": 2,
+        "particles": 134,
+        "displayObjects": 532,
+        "score": 17
+      },
+      {
+        "t": 85.00833333334705,
+        "enemies": 4,
+        "projectiles": 5,
+        "particles": 121,
+        "displayObjects": 520,
+        "score": 17
+      },
+      {
+        "t": 86.01666666668119,
+        "enemies": 5,
+        "projectiles": 5,
+        "particles": 67,
+        "displayObjects": 526,
+        "score": 17
+      },
+      {
+        "t": 87.00833333334865,
+        "enemies": 5,
+        "projectiles": 2,
+        "particles": 109,
+        "displayObjects": 526,
+        "score": 17
+      },
+      {
+        "t": 88.02500000001612,
+        "enemies": 6,
+        "projectiles": 4,
+        "particles": 90,
+        "displayObjects": 532,
+        "score": 17
+      },
+      {
+        "t": 89.03333333335026,
+        "enemies": 6,
+        "projectiles": 6,
+        "particles": 89,
+        "displayObjects": 532,
+        "score": 17
+      },
+      {
+        "t": 90.05000000001773,
+        "enemies": 7,
+        "projectiles": 1,
+        "particles": 77,
+        "displayObjects": 538,
+        "score": 17
+      },
+      {
+        "t": 91.05833333335187,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 89,
+        "displayObjects": 538,
+        "score": 17
+      },
+      {
+        "t": 92.05833333335266,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 74,
+        "displayObjects": 544,
+        "score": 17
+      },
+      {
+        "t": 93.05833333335346,
+        "enemies": 8,
+        "projectiles": 5,
+        "particles": 102,
+        "displayObjects": 544,
+        "score": 17
+      },
+      {
+        "t": 94.0666666666876,
+        "enemies": 9,
+        "projectiles": 8,
+        "particles": 95,
+        "displayObjects": 550,
+        "score": 17
+      },
+      {
+        "t": 95.08333333335507,
+        "enemies": 8,
+        "projectiles": 6,
+        "particles": 121,
+        "displayObjects": 544,
+        "score": 17
+      },
+      {
+        "t": 96.08333333335587,
+        "enemies": 9,
+        "projectiles": 3,
+        "particles": 122,
+        "displayObjects": 551,
+        "score": 17
+      },
+      {
+        "t": 97.10000000002334,
+        "enemies": 8,
+        "projectiles": 3,
+        "particles": 122,
+        "displayObjects": 545,
+        "score": 18
+      },
+      {
+        "t": 98.10000000002414,
+        "enemies": 8,
+        "projectiles": 5,
+        "particles": 142,
+        "displayObjects": 545,
+        "score": 19
+      },
+      {
+        "t": 99.10833333335827,
+        "enemies": 8,
+        "projectiles": 1,
+        "particles": 91,
+        "displayObjects": 545,
+        "score": 19
+      },
+      {
+        "t": 100.12500000002575,
+        "enemies": 9,
+        "projectiles": 3,
+        "particles": 108,
+        "displayObjects": 551,
+        "score": 19
+      },
+      {
+        "t": 101.12500000002655,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 135,
+        "displayObjects": 545,
+        "score": 19
+      },
+      {
+        "t": 102.12500000002734,
+        "enemies": 8,
+        "projectiles": 5,
+        "particles": 140,
+        "displayObjects": 545,
+        "score": 20
+      },
+      {
+        "t": 103.14166666669482,
+        "enemies": 8,
+        "projectiles": 7,
+        "particles": 101,
+        "displayObjects": 545,
+        "score": 20
+      },
+      {
+        "t": 104.13333333336227,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 133,
+        "displayObjects": 539,
+        "score": 21
+      },
+      {
+        "t": 105.14166666669641,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 119,
+        "displayObjects": 539,
+        "score": 21
+      },
+      {
+        "t": 106.16666666669722,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 90,
+        "displayObjects": 545,
+        "score": 21
+      },
+      {
+        "t": 107.17500000003136,
+        "enemies": 8,
+        "projectiles": 7,
+        "particles": 93,
+        "displayObjects": 545,
+        "score": 21
+      },
+      {
+        "t": 108.19166666669884,
+        "enemies": 8,
+        "projectiles": 1,
+        "particles": 106,
+        "displayObjects": 545,
+        "score": 21
+      },
+      {
+        "t": 109.19166666669963,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 87,
+        "displayObjects": 545,
+        "score": 21
+      },
+      {
+        "t": 110.20000000003377,
+        "enemies": 9,
+        "projectiles": 3,
+        "particles": 84,
+        "displayObjects": 551,
+        "score": 21
+      },
+      {
+        "t": 111.21666666670124,
+        "enemies": 8,
+        "projectiles": 0,
+        "particles": 109,
+        "displayObjects": 545,
+        "score": 22
+      },
+      {
+        "t": 112.22500000003538,
+        "enemies": 9,
+        "projectiles": 7,
+        "particles": 96,
+        "displayObjects": 551,
+        "score": 22
+      },
+      {
+        "t": 113.22500000003618,
+        "enemies": 9,
+        "projectiles": 3,
+        "particles": 110,
+        "displayObjects": 551,
+        "score": 22
+      },
+      {
+        "t": 114.22500000003697,
+        "enemies": 9,
+        "projectiles": 5,
+        "particles": 153,
+        "displayObjects": 551,
+        "score": 22
+      },
+      {
+        "t": 115.24166666670445,
+        "enemies": 9,
+        "projectiles": 6,
+        "particles": 115,
+        "displayObjects": 551,
+        "score": 22
+      },
+      {
+        "t": 116.25833333337192,
+        "enemies": 10,
+        "projectiles": 4,
+        "particles": 121,
+        "displayObjects": 557,
+        "score": 22
+      },
+      {
+        "t": 117.2750000000394,
+        "enemies": 10,
+        "projectiles": 1,
+        "particles": 101,
+        "displayObjects": 557,
+        "score": 22
+      },
+      {
+        "t": 118.28333333337353,
+        "enemies": 10,
+        "projectiles": 4,
+        "particles": 98,
+        "displayObjects": 557,
+        "score": 22
+      },
+      {
+        "t": 119.30000000004101,
+        "enemies": 10,
+        "projectiles": 5,
+        "particles": 97,
+        "displayObjects": 557,
+        "score": 22
+      },
+      {
+        "t": 120.31666666670849,
+        "enemies": 9,
+        "projectiles": 1,
+        "particles": 149,
+        "displayObjects": 551,
+        "score": 22
+      },
+      {
+        "t": 121.30833333337594,
+        "enemies": 9,
+        "projectiles": 7,
+        "particles": 116,
+        "displayObjects": 551,
+        "score": 23
+      },
+      {
+        "t": 122.33333333337676,
+        "enemies": 8,
+        "projectiles": 7,
+        "particles": 93,
+        "displayObjects": 545,
+        "score": 24
+      },
+      {
+        "t": 123.33333333337755,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 119,
+        "displayObjects": 545,
+        "score": 25
+      },
+      {
+        "t": 124.33333333337835,
+        "enemies": 8,
+        "projectiles": 6,
+        "particles": 100,
+        "displayObjects": 545,
+        "score": 25
+      },
+      {
+        "t": 125.35833333337916,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 100,
+        "displayObjects": 551,
+        "score": 25
+      },
+      {
+        "t": 126.35833333337996,
+        "enemies": 9,
+        "projectiles": 2,
+        "particles": 110,
+        "displayObjects": 551,
+        "score": 26
+      },
+      {
+        "t": 127.35833333338076,
+        "enemies": 9,
+        "projectiles": 3,
+        "particles": 97,
+        "displayObjects": 551,
+        "score": 26
+      },
+      {
+        "t": 128.36666666671425,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 114,
+        "displayObjects": 551,
+        "score": 27
+      },
+      {
+        "t": 129.37500000004667,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 113,
+        "displayObjects": 545,
+        "score": 27
+      },
+      {
+        "t": 130.38333333337908,
+        "enemies": 9,
+        "projectiles": 1,
+        "particles": 83,
+        "displayObjects": 551,
+        "score": 27
+      },
+      {
+        "t": 131.3916666667115,
+        "enemies": 9,
+        "projectiles": 7,
+        "particles": 107,
+        "displayObjects": 551,
+        "score": 27
+      },
+      {
+        "t": 132.41666666671057,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 140,
+        "displayObjects": 551,
+        "score": 27
+      },
+      {
+        "t": 133.40833333337633,
+        "enemies": 8,
+        "projectiles": 3,
+        "particles": 138,
+        "displayObjects": 545,
+        "score": 28
+      },
+      {
+        "t": 134.42500000004208,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 99,
+        "displayObjects": 551,
+        "score": 28
+      },
+      {
+        "t": 135.42500000004117,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 131,
+        "displayObjects": 545,
+        "score": 28
+      },
+      {
+        "t": 136.43333333337358,
+        "enemies": 8,
+        "projectiles": 3,
+        "particles": 100,
+        "displayObjects": 545,
+        "score": 28
+      },
+      {
+        "t": 137.43333333337267,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 92,
+        "displayObjects": 539,
+        "score": 29
+      },
+      {
+        "t": 138.43333333337176,
+        "enemies": 8,
+        "projectiles": 6,
+        "particles": 71,
+        "displayObjects": 545,
+        "score": 29
+      },
+      {
+        "t": 139.4500000000375,
+        "enemies": 8,
+        "projectiles": 0,
+        "particles": 67,
+        "displayObjects": 546,
+        "score": 29
+      },
+      {
+        "t": 140.4500000000366,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 95,
+        "displayObjects": 546,
+        "score": 30
+      },
+      {
+        "t": 141.458333333369,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 113,
+        "displayObjects": 546,
+        "score": 30
+      },
+      {
+        "t": 142.47500000003475,
+        "enemies": 9,
+        "projectiles": 2,
+        "particles": 123,
+        "displayObjects": 552,
+        "score": 30
+      },
+      {
+        "t": 143.4916666667005,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 96,
+        "displayObjects": 552,
+        "score": 30
+      },
+      {
+        "t": 144.50833333336624,
+        "enemies": 9,
+        "projectiles": 1,
+        "particles": 120,
+        "displayObjects": 552,
+        "score": 30
+      },
+      {
+        "t": 145.51666666669865,
+        "enemies": 8,
+        "projectiles": 5,
+        "particles": 120,
+        "displayObjects": 546,
+        "score": 30
+      },
+      {
+        "t": 146.5333333333644,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 106,
+        "displayObjects": 546,
+        "score": 31
+      },
+      {
+        "t": 147.5416666666968,
+        "enemies": 8,
+        "projectiles": 3,
+        "particles": 98,
+        "displayObjects": 546,
+        "score": 31
+      },
+      {
+        "t": 148.55000000002923,
+        "enemies": 7,
+        "projectiles": 1,
+        "particles": 90,
+        "displayObjects": 540,
+        "score": 32
+      },
+      {
+        "t": 149.55833333336165,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 75,
+        "displayObjects": 540,
+        "score": 32
+      },
+      {
+        "t": 150.56666666669406,
+        "enemies": 8,
+        "projectiles": 5,
+        "particles": 102,
+        "displayObjects": 546,
+        "score": 32
+      },
+      {
+        "t": 151.57500000002648,
+        "enemies": 8,
+        "projectiles": 3,
+        "particles": 116,
+        "displayObjects": 546,
+        "score": 32
+      },
+      {
+        "t": 152.5833333333589,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 143,
+        "displayObjects": 540,
+        "score": 33
+      },
+      {
+        "t": 153.5916666666913,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 80,
+        "displayObjects": 540,
+        "score": 33
+      },
+      {
+        "t": 154.60833333335705,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 101,
+        "displayObjects": 540,
+        "score": 33
+      },
+      {
+        "t": 155.60833333335614,
+        "enemies": 7,
+        "projectiles": 3,
+        "particles": 74,
+        "displayObjects": 540,
+        "score": 33
+      },
+      {
+        "t": 156.61666666668856,
+        "enemies": 7,
+        "projectiles": 4,
+        "particles": 93,
+        "displayObjects": 540,
+        "score": 33
+      },
+      {
+        "t": 157.62500000002098,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 61,
+        "displayObjects": 540,
+        "score": 33
+      },
+      {
+        "t": 158.64166666668672,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 93,
+        "displayObjects": 546,
+        "score": 33
+      },
+      {
+        "t": 159.65833333335246,
+        "enemies": 8,
+        "projectiles": 5,
+        "particles": 121,
+        "displayObjects": 546,
+        "score": 33
+      },
+      {
+        "t": 160.6750000000182,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 116,
+        "displayObjects": 546,
+        "score": 33
+      },
+      {
+        "t": 161.68333333335062,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 114,
+        "displayObjects": 546,
+        "score": 33
+      },
+      {
+        "t": 162.70000000001636,
+        "enemies": 9,
+        "projectiles": 1,
+        "particles": 86,
+        "displayObjects": 552,
+        "score": 33
+      },
+      {
+        "t": 163.70833333334878,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 130,
+        "displayObjects": 546,
+        "score": 33
+      },
+      {
+        "t": 164.70833333334787,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 94,
+        "displayObjects": 552,
+        "score": 33
+      },
+      {
+        "t": 165.71666666668028,
+        "enemies": 9,
+        "projectiles": 3,
+        "particles": 109,
+        "displayObjects": 552,
+        "score": 33
+      },
+      {
+        "t": 166.7250000000127,
+        "enemies": 10,
+        "projectiles": 3,
+        "particles": 102,
+        "displayObjects": 558,
+        "score": 33
+      },
+      {
+        "t": 167.74166666667844,
+        "enemies": 8,
+        "projectiles": 4,
+        "particles": 115,
+        "displayObjects": 546,
+        "score": 35
+      },
+      {
+        "t": 168.75000000001086,
+        "enemies": 9,
+        "projectiles": 1,
+        "particles": 100,
+        "displayObjects": 552,
+        "score": 35
+      },
+      {
+        "t": 169.74166666667662,
+        "enemies": 9,
+        "projectiles": 4,
+        "particles": 130,
+        "displayObjects": 552,
+        "score": 35
+      },
+      {
+        "t": 170.7666666666757,
+        "enemies": 9,
+        "projectiles": 3,
+        "particles": 136,
+        "displayObjects": 552,
+        "score": 36
+      },
+      {
+        "t": 171.7750000000081,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 112,
+        "displayObjects": 546,
+        "score": 36
+      },
+      {
+        "t": 172.79166666667385,
+        "enemies": 9,
+        "projectiles": 2,
+        "particles": 98,
+        "displayObjects": 552,
+        "score": 36
+      },
+      {
+        "t": 173.80000000000626,
+        "enemies": 8,
+        "projectiles": 2,
+        "particles": 125,
+        "displayObjects": 546,
+        "score": 36
+      },
+      {
+        "t": 174.80000000000535,
+        "enemies": 7,
+        "projectiles": 1,
+        "particles": 136,
+        "displayObjects": 540,
+        "score": 38
+      },
+      {
+        "t": 175.8166666666711,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 86,
+        "displayObjects": 540,
+        "score": 38
+      },
+      {
+        "t": 176.8166666666702,
+        "enemies": 7,
+        "projectiles": 2,
+        "particles": 117,
+        "displayObjects": 540,
+        "score": 38
+      },
+      {
+        "t": 177.83333333333593,
+        "enemies": 6,
+        "projectiles": 1,
+        "particles": 112,
+        "displayObjects": 534,
+        "score": 39
+      },
+      {
+        "t": 178.85000000000167,
+        "enemies": 6,
+        "projectiles": 4,
+        "particles": 138,
+        "displayObjects": 534,
+        "score": 39
+      },
+      {
+        "t": 179.8666666666674,
+        "enemies": 6,
+        "projectiles": 5,
+        "particles": 93,
+        "displayObjects": 534,
+        "score": 39
+      },
+      {
+        "t": 180,
+        "enemies": 6,
+        "projectiles": 4,
+        "particles": 9,
+        "displayObjects": 534,
+        "score": 39
+      }
+    ]
+  },
+  "memory": {
+    "snapshots": [
+      {
+        "label": "menu (before any match)",
+        "jsHeapUsedMB": 7.7827606201171875,
+        "domNodes": 203,
+        "eventListeners": 205,
+        "textureSources": 7,
+        "stageChildren": 0
+      },
+      {
+        "label": "after cycle 1",
+        "jsHeapUsedMB": 7.861602783203125,
+        "domNodes": 159,
+        "eventListeners": 343,
+        "textureSources": 7,
+        "stageChildren": 0
+      },
+      {
+        "label": "after cycle 2",
+        "jsHeapUsedMB": 7.938739776611328,
+        "domNodes": 159,
+        "eventListeners": 343,
+        "textureSources": 7,
+        "stageChildren": 0
+      },
+      {
+        "label": "after cycle 3",
+        "jsHeapUsedMB": 8.028877258300781,
+        "domNodes": 159,
+        "eventListeners": 343,
+        "textureSources": 7,
+        "stageChildren": 0
+      },
+      {
+        "label": "after cycle 4",
+        "jsHeapUsedMB": 8.15578842163086,
+        "domNodes": 159,
+        "eventListeners": 343,
+        "textureSources": 7,
+        "stageChildren": 0
+      },
+      {
+        "label": "after cycle 5",
+        "jsHeapUsedMB": 8.189582824707031,
+        "domNodes": 159,
+        "eventListeners": 343,
+        "textureSources": 7,
+        "stageChildren": 0
+      }
+    ],
+    "autoResumes": 0
+  },
+  "pageErrors": []
+}

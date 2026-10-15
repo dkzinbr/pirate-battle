@@ -36,6 +36,8 @@ export interface GameSessionOptions {
   manualClock?: boolean;
   /** Real time to let the final explosion play before reporting the result. */
   endDelayMs?: number;
+  /** Pause on window blur / hidden tab (default). Profiling turns it off. */
+  autoPause?: boolean;
   onEnded: (summary: MatchSummary) => void;
 }
 
@@ -61,6 +63,7 @@ export class GameSession {
   private readonly sound = new GameAudio();
   private readonly onEnded: (summary: MatchSummary) => void;
   private readonly endDelayMs: number;
+  private readonly autoPause: boolean;
   private phase: SessionPhase = 'running';
   private pauseReason: PauseReason | null = null;
   private container: HTMLElement | null = null;
@@ -74,6 +77,7 @@ export class GameSession {
     this.seed = options.seed;
     this.onEnded = options.onEnded;
     this.endDelayMs = options.endDelayMs ?? 1400;
+    this.autoPause = options.autoPause ?? true;
     this.clock = new FixedStepClock({ manual: options.manualClock ?? false });
     this.world = new World(options.config, createArena(ARENA_LAYOUT, options.config.spawn.islandClearance), options.seed);
     this.renderer = new ArenaRenderer(options.host, this.world, options.textures, options.seed);
@@ -97,8 +101,10 @@ export class GameSession {
     app.ticker.add(this.tick);
     this.syncTicker();
     this.keyboard.attach();
-    document.addEventListener('visibilitychange', this.handleVisibility);
-    window.addEventListener('blur', this.handleBlur);
+    if (this.autoPause) {
+      document.addEventListener('visibilitychange', this.handleVisibility);
+      window.addEventListener('blur', this.handleBlur);
+    }
     this.sound.start();
   }
 

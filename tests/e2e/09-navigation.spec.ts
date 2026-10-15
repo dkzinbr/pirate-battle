@@ -24,6 +24,7 @@ test.describe('navigation', () => {
     await openApp(page, { overrides: NO_SPAWNS });
 
     let baseline: number | null = null;
+    let textureBaseline: number | null = null;
     for (let i = 0; i < 5; i++) {
       await startMatch(page);
       await expect(page.locator('canvas')).toHaveCount(1);
@@ -34,6 +35,12 @@ test.describe('navigation', () => {
       await page.keyboard.press('Escape');
       await page.getByTestId('pause-exit').click();
       await expect(page.locator('canvas')).toHaveCount(0);
+
+      // Leaving a match frees its scene; the shared atlases are uploaded once.
+      const gpu = await page.evaluate(() => window.__pirate.gpuStats());
+      expect(gpu.stageChildren).toBe(0);
+      textureBaseline ??= gpu.textureSources;
+      expect(gpu.textureSources).toBe(textureBaseline);
 
       await page.getByTestId('menu-options').click();
       await page.getByRole('button', { name: 'Main Menu' }).click();

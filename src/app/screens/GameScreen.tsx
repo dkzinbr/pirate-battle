@@ -48,6 +48,7 @@ export function GameScreen({ onRestart }: GameScreenProps) {
       config: createMatchConfig(options, e2e.overrides ?? undefined),
       seed: e2e.seed ?? randomSeed(),
       manualClock: e2e.manualClock,
+      autoPause: e2e.autoPause,
     };
   });
   const loadState = useSyncExternalStore(assetLoader.state.subscribe, assetLoader.state.getSnapshot);
@@ -80,6 +81,7 @@ export function GameScreen({ onRestart }: GameScreenProps) {
           config: setup.config,
           seed: setup.seed,
           manualClock: setup.manualClock,
+          autoPause: setup.autoPause,
           onEnded,
         });
         created.mount(container);

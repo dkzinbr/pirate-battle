@@ -61,6 +61,7 @@ interface PirateBridge {
   setScenario(scenario: string, seed?: number): void;
   serverMatches(): ServerMatch[];
   outbox(): Record<string, { status: string; record: { matchId: string } }>;
+  gpuStats(): Promise<{ textureSources: number | null; stageChildren: number }>;
 }
 
 declare global {
