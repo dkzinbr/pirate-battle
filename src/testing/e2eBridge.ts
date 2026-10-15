@@ -1,5 +1,8 @@
 import type { DeepPartial, EnemyKind, GameConfig } from '../game/config';
 import type { GameSession } from '../game/GameSession';
+import { submissionStore } from '../api/submissionStore';
+import { mockDb } from '../mocks/db';
+import { type ScenarioId, updateMockSettings } from '../mocks/scenarios';
 
 /**
  * Test instrumentation, enabled with `?e2e=1` (kept for the browser session).
@@ -60,6 +63,13 @@ export function initE2EBridge(search: string): void {
     spawnEnemy: (kind: EnemyKind, x: number, y: number, angle?: number) =>
       activeSession?.spawnEnemy(kind, x, y, angle) ?? null,
     hasSession: () => activeSession !== null,
+    /** Switches the mocked network scenario (also restarts its latency sequence). */
+    setScenario: (scenario: ScenarioId, seed?: number) => {
+      updateMockSettings(seed === undefined ? { scenario } : { scenario, seed });
+    },
+    /** Server-side view of stored matches, to assert idempotency. */
+    serverMatches: () => mockDb.all(),
+    outbox: () => submissionStore.getSnapshot(),
   };
   Object.defineProperty(window, '__pirate', { value: bridge, configurable: true });
 }

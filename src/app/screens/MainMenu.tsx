@@ -9,6 +9,8 @@ import { navigate } from '../router';
 
 export function MainMenu() {
   const [labOpen, setLabOpen] = useState(false);
+  // Only tall screens start with the help expanded, so every action fits without scrolling.
+  const [helpOpenByDefault] = useState(() => window.matchMedia('(min-height: 820px)').matches);
   const submissions = useSyncExternalStore(submissionStore.subscribe, submissionStore.getSnapshot);
   const unsent = unsentEntries(submissions).length;
 
@@ -28,14 +30,6 @@ export function MainMenu() {
             Options
           </GameButton>
         </nav>
-        <p className="muted">Navigate the islands. Survive the battle.</p>
-        <details className="disclosure" open>
-          <summary>How to play</summary>
-          <ControlsHelp />
-          <p className="muted" style={{ fontSize: '0.72rem', marginTop: 6 }}>
-            Sink chasers before they ram you and keep moving to dodge shooters. Each enemy sunk by your cannons scores 1 point.
-          </p>
-        </details>
         <div className="btn-row" role="group" aria-label="Captain's log">
           <GameButton variant="secondary" size="small" data-testid="menu-ranking" onClick={() => navigate({ name: 'log', tab: 'ranking' })}>
             Ranking
@@ -49,6 +43,13 @@ export function MainMenu() {
             {unsent === 1 ? '1 battle is waiting to be saved.' : `${unsent} battles are waiting to be saved.`}
           </p>
         ) : null}
+        <details className="disclosure" open={helpOpenByDefault}>
+          <summary>How to play</summary>
+          <ControlsHelp />
+          <p className="muted" style={{ fontSize: '0.72rem', marginTop: 6 }}>
+            Sink chasers before they ram you and keep moving to dodge shooters. Each enemy sunk by your cannons scores 1 point.
+          </p>
+        </details>
         <button type="button" className="link-btn" data-testid="open-network-lab" onClick={() => setLabOpen(true)}>
           Network lab (mock API scenarios)
         </button>

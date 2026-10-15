@@ -20,14 +20,22 @@ export function useSubmissionSync(): void {
   const queryClient = useQueryClient();
   const entries = useSyncExternalStore(submissionStore.subscribe, submissionStore.getSnapshot);
 
+  // A request already in flight may have read the server before this record
+  // existed. Invalidating alone would reuse it when the query has no data yet,
+  // so cancel it first to force a fresh read.
+  const refresh = async (queryKey: readonly unknown[]) => {
+    await queryClient.cancelQueries({ queryKey });
+    await queryClient.invalidateQueries({ queryKey });
+  };
+
   const { mutate } = useMutation({
     mutationKey: SUBMIT_MUTATION_KEY,
     mutationFn: (record: MatchRecord) => submitMatch(record),
     scope: { id: 'match-submission' },
     onSuccess: (_result, record) => {
       markConfirmed(record.matchId);
-      void queryClient.invalidateQueries({ queryKey: queryKeys.rankingAll });
-      void queryClient.invalidateQueries({ queryKey: queryKeys.historyAll });
+      void refresh(queryKeys.rankingAll);
+      void refresh(queryKeys.historyAll);
     },
     onError: (error, record) => {
       markFailed(record.matchId, describeApiError(error));

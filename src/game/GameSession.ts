@@ -65,7 +65,7 @@ export class GameSession {
   private pauseReason: PauseReason | null = null;
   private container: HTMLElement | null = null;
   private resizeObserver: ResizeObserver | null = null;
-  private endTimer: ReturnType<typeof setTimeout> | null = null;
+  private endingLeftMs = 0;
   private destroyed = false;
 
   constructor(options: GameSessionOptions) {
@@ -95,7 +95,7 @@ export class GameSession {
     this.resize();
 
     app.ticker.add(this.tick);
-    app.ticker.start();
+    this.syncTicker();
     this.keyboard.attach();
     document.addEventListener('visibilitychange', this.handleVisibility);
     window.addEventListener('blur', this.handleBlur);
@@ -130,11 +130,27 @@ export class GameSession {
 
   setManualClock(manual: boolean): void {
     this.clock.setManual(manual);
+    if (this.container) this.syncTicker();
   }
 
-  /** Advances the real simulation by `ms` of game time (manual clock only). */
+  /** A manual clock renders only when advanced, so idle test pages cost nothing. */
+  private syncTicker(): void {
+    const { app } = this.host;
+    if (this.clock.isManual) {
+      app.ticker.stop();
+      app.render();
+    } else {
+      app.ticker.start();
+    }
+  }
+
+  /**
+   * Advances the real simulation by `ms` of game time (manual clock only).
+   * Time left over after the match ends plays the final explosion and, once
+   * the end delay is spent, reports the result. Returns simulated match time.
+   */
   advance(ms: number): number {
-    if (!this.clock.isManual) return 0;
+    if (!this.clock.isManual || this.destroyed) return 0;
     let remaining = this.clock.stepsFor(ms);
     let taken = 0;
     while (remaining > 0 && this.phase === 'running') {
@@ -142,8 +158,10 @@ export class GameSession {
       taken += this.simulate(batch);
       remaining -= batch;
     }
+    const simulatedMs = taken * FIXED_DT * 1000;
+    if (this.phase === 'ending') this.playEnding(ms - simulatedMs);
     this.host.app.render();
-    return taken * FIXED_DT * 1000;
+    return simulatedMs;
   }
 
   spawnEnemy(kind: EnemyKind, x: number, y: number, angle?: number): number | null {
@@ -202,16 +220,34 @@ export class GameSession {
     if (this.phase === 'running') {
       const steps = this.clock.consume(ticker.deltaMS / 1000);
       if (steps > 0) this.simulate(steps);
-    } else if (this.phase === 'ending' || this.phase === 'ended') {
-      // The world is frozen; only the final explosion keeps animating.
-      this.renderer.update(ticker.deltaMS / 1000);
+    } else if (this.phase === 'ending' && !this.clock.isManual) {
+      this.playEnding(ticker.deltaMS);
     }
   };
+
+  /** The world is frozen; only the final explosion animates until the result is reported. */
+  private playEnding(ms: number): void {
+    let left = Math.max(0, ms);
+    while (left > 0 && this.phase === 'ending') {
+      const slice = Math.min(left, 1000 / 60, this.endingLeftMs);
+      this.renderer.update(slice / 1000);
+      this.endingLeftMs -= slice;
+      left -= slice;
+      if (this.endingLeftMs <= 0) this.complete();
+    }
+  }
+
+  private complete(): void {
+    if (this.phase !== 'ending' || this.destroyed) return;
+    this.phase = 'ended';
+    this.publishHud();
+    this.onEnded(this.world.summary());
+  }
 
   private simulate(steps: number): number {
     let taken = 0;
     for (; taken < steps; taken++) {
-      this.world.step(FIXED_DT, this.input.current);
+      this.world.step(FIXED_DT, this.input.sample());
       if (this.world.status !== 'running') {
         taken++;
         break;
@@ -229,15 +265,8 @@ export class GameSession {
   private finish(): void {
     if (this.phase !== 'running') return;
     this.phase = 'ending';
+    this.endingLeftMs = this.endDelayMs;
     this.input.setEnabled(false);
-    const summary = this.world.summary();
-    this.endTimer = setTimeout(() => {
-      this.endTimer = null;
-      if (this.destroyed) return;
-      this.phase = 'ended';
-      this.publishHud();
-      this.onEnded(summary);
-    }, this.endDelayMs);
   }
 
   private resize(): void {
@@ -281,7 +310,6 @@ export class GameSession {
   destroy(): void {
     if (this.destroyed) return;
     this.destroyed = true;
-    if (this.endTimer) clearTimeout(this.endTimer);
     const { app } = this.host;
     app.ticker.remove(this.tick);
     app.ticker.stop();

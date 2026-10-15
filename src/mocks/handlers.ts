@@ -78,12 +78,26 @@ async function failureFor(scenario: ScenarioId, operation: Operation): Promise<R
   }
 }
 
-async function prelude(operation: Operation): Promise<{ scenario: ScenarioId; failure: Response | null }> {
+function nextRequest(): { scenario: ScenarioId; latency: number } {
   const { scenario } = mockSettingsStore.getSnapshot();
   requestCounter += 1;
-  const latency = latencyFor(scenario, requestCounter);
-  if (latency > 0) await delay(latency);
-  return { scenario, failure: await failureFor(scenario, operation) };
+  return { scenario, latency: latencyFor(scenario, requestCounter) };
+}
+
+async function wait(ms: number): Promise<void> {
+  if (ms > 0) await delay(ms);
+}
+
+/**
+ * Queries read the data as soon as the request arrives and only then wait, so
+ * a slow response really carries an older snapshot (and an older revision)
+ * than a faster request issued after it.
+ */
+async function respondToQuery(operation: Operation, read: (scenario: ScenarioId) => Response): Promise<Response> {
+  const { scenario, latency } = nextRequest();
+  const response = read(scenario);
+  await wait(latency);
+  return (await failureFor(scenario, operation)) ?? response;
 }
 
 function readPaging(url: URL): { page: number; pageSize: number } | null {
@@ -99,39 +113,41 @@ function emptyPage(page: number, pageSize: number): Page<never> {
 }
 
 export const handlers = [
-  http.get(API_ROUTES.ranking, async ({ request }) => {
-    const { scenario, failure } = await prelude('ranking');
-    if (failure) return failure;
-    const url = new URL(request.url);
-    const paging = readPaging(url);
-    const sessionDurationSec = Number(url.searchParams.get('sessionDurationSec'));
-    const spawnIntervalSec = Number(url.searchParams.get('spawnIntervalSec'));
-    if (!paging || !(sessionDurationSec > 0) || !(spawnIntervalSec > 0)) {
-      return HttpResponse.json(errorBody('bad_request', 'Invalid ranking query.'), { status: 400 });
-    }
-    const config = { sessionDurationSec, spawnIntervalSec };
-    const body: RankingPage =
-      scenario === 'empty'
-        ? { ...emptyPage(paging.page, paging.pageSize), config }
-        : mockDb.ranking(config, paging.page, paging.pageSize);
-    return HttpResponse.json(body);
-  }),
+  http.get(API_ROUTES.ranking, ({ request }) =>
+    respondToQuery('ranking', (scenario) => {
+      const url = new URL(request.url);
+      const paging = readPaging(url);
+      const sessionDurationSec = Number(url.searchParams.get('sessionDurationSec'));
+      const spawnIntervalSec = Number(url.searchParams.get('spawnIntervalSec'));
+      if (!paging || !(sessionDurationSec > 0) || !(spawnIntervalSec > 0)) {
+        return HttpResponse.json(errorBody('bad_request', 'Invalid ranking query.'), { status: 400 });
+      }
+      const config = { sessionDurationSec, spawnIntervalSec };
+      const body: RankingPage =
+        scenario === 'empty'
+          ? { ...emptyPage(paging.page, paging.pageSize), config }
+          : mockDb.ranking(config, paging.page, paging.pageSize);
+      return HttpResponse.json(body);
+    }),
+  ),
 
-  http.get('/api/players/:playerId/matches', async ({ request, params }) => {
-    const { scenario, failure } = await prelude('history');
-    if (failure) return failure;
-    const paging = readPaging(new URL(request.url));
-    const playerId = typeof params.playerId === 'string' ? params.playerId : '';
-    if (!paging || !playerId) {
-      return HttpResponse.json(errorBody('bad_request', 'Invalid history query.'), { status: 400 });
-    }
-    const body: Page<MatchRecord> =
-      scenario === 'empty' ? emptyPage(paging.page, paging.pageSize) : mockDb.history(playerId, paging.page, paging.pageSize);
-    return HttpResponse.json(body);
-  }),
+  http.get('/api/players/:playerId/matches', ({ request, params }) =>
+    respondToQuery('history', (scenario) => {
+      const paging = readPaging(new URL(request.url));
+      const playerId = typeof params.playerId === 'string' ? params.playerId : '';
+      if (!paging || !playerId) {
+        return HttpResponse.json(errorBody('bad_request', 'Invalid history query.'), { status: 400 });
+      }
+      const body: Page<MatchRecord> =
+        scenario === 'empty' ? emptyPage(paging.page, paging.pageSize) : mockDb.history(playerId, paging.page, paging.pageSize);
+      return HttpResponse.json(body);
+    }),
+  ),
 
   http.post(API_ROUTES.matches, async ({ request }) => {
-    const { scenario, failure } = await prelude('submit');
+    const { scenario, latency } = nextRequest();
+    await wait(latency);
+    const failure = await failureFor(scenario, 'submit');
     if (failure) return failure;
     let payload: unknown;
     try {

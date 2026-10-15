@@ -40,12 +40,15 @@ export function controlForKey(code: string): ControlName | undefined {
 export class ControlInput {
   private readonly holds = new Map<string, ControlName>();
   private readonly state: ControlState = { ...IDLE_CONTROLS };
+  /** Presses not yet seen by a simulation step, so taps shorter than a step still count. */
+  private readonly latched = new Set<ControlName>();
   private enabled = true;
 
   press(source: string, control: ControlName): void {
     if (!this.enabled) return;
     this.holds.set(source, control);
     this.state[control] = true;
+    this.latched.add(control);
   }
 
   release(source: string): void {
@@ -58,7 +61,17 @@ export class ControlInput {
   /** Clears all holds; used on pause, blur and match end so nothing carries over. */
   reset(): void {
     this.holds.clear();
+    this.latched.clear();
     Object.assign(this.state, IDLE_CONTROLS);
+  }
+
+  /** Controls for the next simulation step; consumes latched taps. */
+  sample(): Readonly<ControlState> {
+    if (this.latched.size === 0) return this.state;
+    const controls = { ...this.state };
+    for (const control of this.latched) controls[control] = true;
+    this.latched.clear();
+    return controls;
   }
 
   setEnabled(enabled: boolean): void {

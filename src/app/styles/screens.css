@@ -214,7 +214,7 @@
 
 .result-score {
   margin: -6px 0 0;
-  font-size: clamp(3rem, 9vw, 4.2rem);
+  font-size: clamp(2.4rem, 9vmin, 4.2rem);
   font-weight: 900;
   line-height: 1;
   color: var(--gold-strong);
@@ -486,7 +486,19 @@
   }
 
   .title-art {
-    width: min(220px, 70%);
+    width: min(200px, 60%);
+  }
+
+  .btn {
+    --w: clamp(150px, 19vw, 180px);
+  }
+
+  .btn--small {
+    --w: clamp(132px, 16vw, 156px);
+  }
+
+  .btn-stack {
+    gap: 4px;
   }
 
   .log-table tbody td,

@@ -177,7 +177,7 @@ select {
 
 .panel {
   position: relative;
-  width: min(420px, 100%);
+  width: min(460px, 100%);
   max-height: 100%;
   border-style: solid;
   border-width: 40px 32px;
@@ -246,9 +246,11 @@ select {
   --w: clamp(170px, 22vw, 220px);
   position: relative;
   width: var(--w);
+  flex-shrink: 0;
   aspect-ratio: 256 / 88;
   border: 0;
-  padding: 0 14% 3%;
+  padding: 0 calc(var(--w) * 0.12) calc(var(--w) * 0.03);
+  white-space: nowrap;
   background: var(--img-btn-normal) center / 100% 100% no-repeat;
   color: var(--ink);
   font-weight: 900;
@@ -296,8 +298,9 @@ select {
 }
 
 .btn--small {
-  --w: clamp(120px, 15vw, 150px);
-  font-size: clamp(0.72rem, 1.2vw, 0.82rem);
+  --w: clamp(140px, 17vw, 170px);
+  padding-inline: calc(var(--w) * 0.09);
+  font-size: clamp(0.7rem, 1.15vw, 0.8rem);
 }
 
 .btn-stack {

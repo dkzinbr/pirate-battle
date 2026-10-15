@@ -68,6 +68,11 @@ class MockDatabase {
     return { record: stored, created: true };
   }
 
+  all(): MatchRecord[] {
+    this.refresh();
+    return structuredClone(this.state.matches);
+  }
+
   find(matchId: string): MatchRecord | undefined {
     this.refresh();
     return this.state.matches.find((m) => m.matchId === matchId);
