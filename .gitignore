@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Raw Playwright artifacts (the HTML report in reports/ is versioned)
+test-results/
+playwright/.cache/
+.vercel
