@@ -4,7 +4,7 @@ A top-down 2D naval shooter. Sail around an archipelago, sink as many enemy ship
 
 **Stack:** React 19 · TypeScript (strict) · PixiJS 8 · TanStack Query 5 · Axios · MSW 2 · Playwright · Vite 7 · Vitest.
 
-**Live build:** _add the Vercel URL here after deploying (see [Deploy](#deploy))._
+**Live build:** [pirate-battle-sigma-plum.vercel.app](https://pirate-battle-sigma-plum.vercel.app/)
 
 - [Quick start](#quick-start)
 - [How to play](#how-to-play)
@@ -208,7 +208,7 @@ npx vercel           # preview
 npx vercel --prod    # production
 ```
 
-Then check the published build with `E2E_BASE_URL=https://<your-app>.vercel.app/ npm run test:e2e`.
+Then check the published build with `E2E_BASE_URL=https://<your-app>.vercel.app/ npm run test:e2e`. Against the live build, all 89 tests that ran passed, including the whole desktop project. After about 90 tests of headless traffic, Vercel's bot protection (*Security Checkpoint*, code 21) started blocking the IP, so the remaining mobile tests could not load the page. To run the full suite against a deployment, run one project at a time (`--project=mobile-chromium`) or add a firewall bypass rule for your IP in the Vercel dashboard.
 
 ## Project layout
 
