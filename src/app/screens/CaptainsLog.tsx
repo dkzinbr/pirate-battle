@@ -144,6 +144,7 @@ function RankingTab({ initialConfig }: { initialConfig: MatchConfigSnapshot }) {
             No battles recorded for these settings yet. Be the first captain on the board!
           </p>
         ) : (
+          <div className="log-scroll">
           <table className="log-table" data-testid="ranking-table" aria-busy={query.isFetching}>
             <caption className="visually-hidden">
               Ranking for {config.sessionDurationSec} second battles with a {config.spawnIntervalSec} second spawn interval
@@ -153,7 +154,7 @@ function RankingTab({ initialConfig }: { initialConfig: MatchConfigSnapshot }) {
                 <th scope="col">Rank</th>
                 <th scope="col">Captain</th>
                 <th scope="col">Points</th>
-                <th scope="col">Played</th>
+                <th scope="col" className="col-played">Played</th>
               </tr>
             </thead>
             <tbody>
@@ -169,7 +170,7 @@ function RankingTab({ initialConfig }: { initialConfig: MatchConfigSnapshot }) {
                       {mine ? <span className="you-badge">You</span> : null}
                     </th>
                     <td className="points">{entry.score}</td>
-                    <td className="played">
+                    <td className="played col-played">
                       {played.day} · {played.time}
                     </td>
                   </tr>
@@ -177,6 +178,7 @@ function RankingTab({ initialConfig }: { initialConfig: MatchConfigSnapshot }) {
               })}
             </tbody>
           </table>
+          </div>
         )
       ) : null}
       {data && data.items.length > 0 ? (
@@ -222,13 +224,14 @@ function HistoryTab({ captainName }: { captainName: string }) {
             No battles yet. Your finished battles will appear here.
           </p>
         ) : (
+          <div className="log-scroll">
           <table className="log-table" data-testid="history-table" aria-busy={query.isFetching}>
             <caption className="visually-hidden">Your match history, newest first</caption>
             <thead>
               <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Points</th>
-                <th scope="col">Duration</th>
+                <th scope="col" className="col-duration">Duration</th>
                 <th scope="col">Result</th>
               </tr>
             </thead>
@@ -241,13 +244,14 @@ function HistoryTab({ captainName }: { captainName: string }) {
                       {played.day} <span className="played">· {played.time}</span>
                     </th>
                     <td className="points">{match.score}</td>
-                    <td>{formatDurationMs(match.durationMs)}</td>
+                    <td className="col-duration">{formatDurationMs(match.durationMs)}</td>
                     <td className={`reason reason--${match.endReason}`}>{match.endReason === 'time_up' ? 'Time up' : 'Defeated'}</td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
+          </div>
         )
       ) : null}
       {data && data.items.length > 0 ? (

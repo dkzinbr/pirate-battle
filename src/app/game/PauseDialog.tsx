@@ -49,7 +49,7 @@ export function PauseDialog({ reason, canResume, onResume, onRestart, onExit }: 
           Main Menu
         </GameButton>
       </div>
-      <p className="muted" style={{ fontSize: '0.72rem' }}>
+      <p className="muted fine-print">
         Leaving or restarting abandons this battle; it will not be recorded.
       </p>
     </Dialog>

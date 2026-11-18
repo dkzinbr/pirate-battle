@@ -79,7 +79,7 @@ export function OptionsForm({ note, onBack, backLabel }: OptionsFormProps) {
   };
 
   return (
-    <form className="btn-stack" style={{ width: '100%', gap: 14 }} onSubmit={onSubmit} noValidate aria-label="Game options">
+    <form className="form-stack" onSubmit={onSubmit} noValidate aria-label="Game options">
       {note ? <p className="muted">{note}</p> : null}
       <NumberStepper
         label="Game session time"

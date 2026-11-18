@@ -46,7 +46,7 @@ export function MainMenu() {
         <details className="disclosure" open={helpOpenByDefault}>
           <summary>How to play</summary>
           <ControlsHelp />
-          <p className="muted" style={{ fontSize: '0.72rem', marginTop: 6 }}>
+          <p className="muted fine-print fine-print--tight">
             Sink chasers before they ram you and keep moving to dodge shooters. Each enemy sunk by your cannons scores 1 point.
           </p>
         </details>

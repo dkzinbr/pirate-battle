@@ -73,7 +73,7 @@ export function ResultScreen() {
           <span>Points</span> · <span data-testid="result-duration">{formatDurationMs(record.durationMs)}</span> ·{' '}
           <span data-testid="result-reason">{reason}</span>
         </p>
-        <p className="muted" style={{ fontSize: '0.75rem' }}>
+        <p className="muted fine-print">
           {record.config.sessionDurationSec} s battle · {record.config.spawnIntervalSec} s spawn interval
         </p>
         <RecordStatus entry={submissions[record.matchId]} />

@@ -166,8 +166,8 @@
 }
 
 .touch-btn {
-  width: clamp(48px, 6.4cqw, 80px);
-  height: clamp(48px, 6.4cqw, 80px);
+  width: clamp(56px, 8cqw, 84px);
+  height: clamp(56px, 8cqw, 84px);
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
@@ -191,7 +191,8 @@
   z-index: 40;
   display: grid;
   place-items: center;
-  padding: 12px;
+  padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right))
+    max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
   background: rgba(6, 12, 20, 0.6);
 }
 
@@ -279,8 +280,15 @@
   color: var(--cream-muted);
 }
 
+.log-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .log-table {
   width: 100%;
+  min-width: 0;
   border-collapse: separate;
   border-spacing: 0 6px;
   font-size: 0.85rem;
@@ -517,5 +525,47 @@
   .log-table thead th {
     padding-left: 8px;
     padding-right: 8px;
+  }
+
+  /* Ranking date is secondary; history must keep duration and result visible. */
+  .log-table .col-played {
+    display: none;
+  }
+
+  .bracket {
+    gap: 8px;
+  }
+
+  .bracket .select {
+    max-width: 100%;
+  }
+
+  .lab-scenarios {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* iOS zooms the page when a focused input is smaller than 16px. */
+@media (max-width: 560px) {
+  .text-input,
+  .stepper input,
+  .select {
+    font-size: 16px;
+  }
+}
+
+@media (pointer: coarse) {
+  .round-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pagination .round-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .link-btn {
+    padding: 10px;
   }
 }
