@@ -2,3 +2,5 @@
 *.png binary
 *.wav binary
 *.swf binary
+# Relatórios gerados (Playwright e perf) não contam nas estatísticas de linguagem do GitHub
+reports/** linguist-generated
